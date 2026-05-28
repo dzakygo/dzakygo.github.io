@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - DzakyGO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVIGASI KUSTOM -->
+    <nav class="main-nav">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="https://yt3.ggpht.com/U3JA2tnyay3U-wrA3DR27lKKBC5CkTechENg6CknuEoIOvZT9atx-5Bk9BSZ0ES4HWsyJK6ucw=s500" alt="DzakyGO" style="height: 45px; width: auto;">
+        </a>
+        <a href="index.html" class="nav-link">HOME</a>
+        <div class="eh-logo nav-link" onclick="toggleSubmenu()" style="cursor: pointer;">DZAKYGO</div>
+        <a href="#" class="nav-link">MODS</a>
+        <a href="about.html" class="nav-link">ABOUT ME</a>
+        
+        <div id="eh-submenu" class="submenu">
+            <a href="#" class="submenu-link">NEWS</a>
+            <a href="https://aozorauniverse.blogspot.com" target="_blank" class="submenu-link">AOZORA WEBSITE</a>
+            <a href="https://dsc.gg/aozorians" target="_blank" class="submenu-link">AOZORA DISCORD</a>
+            <a href="https://youtube.com/@DzakyGO.2" target="_blank" class="submenu-link">DZAKYGO YOUTUBE</a>
+        </div>
+    </nav>
+
+    <!-- CONTENT ABOUT ME -->
+    <div class="about-container" style="margin-top: 20px;">
+        <div class="profile-header">
+            <div class="profile-img-box">
+                <img src="https://yt3.googleusercontent.com/U3JA2tnyay3U-wrA3DR27lKKBC5CkTechENg6CknuEoIOvZT9atx-5Bk9BSZ0ES4HWsyJK6ucw=s2000" class="profile-img" alt="DzakyGO Profile">
+            </div>
+            
+            <div class="profile-info">
+                <div class="nickname">JAKI</div>
+                <h1 class="real-name">DZAKYGO</h1>
+                
+                <div class="role-tags">
+                    <span class="tag" style="border-color: #ff0000; color: #ff0000;">YouTube Creator</span>
+                    <span class="tag">PSP Modder</span>
+                    <span class="tag">Aozora Founder</span>
+                    <span class="tag">E-Horizon Host</span>
+                </div>
+                
+                <div class="bio-text">
+                    Halo! Saya <b>JakiZulfah</b>, atau lebih dikenal sebagai <b>DzakyGO</b>. Sebagai creator di balik channel YouTube DzakyGO, saya fokus pada modifikasi game balap, kustomisasi tekstur, dan mengelola komunitas <b>Aozorians</b>. 
+                    <br><br>
+                    Di sini kamu bisa menemukan update terbaru mengenai mod MotoGP 2026, jadwal race <b>E-Horizon Championship</b>, hingga berbagai aset digital dari <b>Aozora Universe</b>.
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card" onclick="window.open('https://youtube.com/@DzakyGO.2', '_blank')" style="cursor:pointer;">
+                <span class="stat-label">YOUTUBE</span>
+                <span class="stat-value">DZAKYGO.2</span>
+            </div>
+            <div class="stat-card" style="border-color: #379bff;">
+                <span class="stat-label" style="color: #379bff;">LATEST MOD</span>
+                <span class="stat-value">MGP '26 V2</span>
+            </div>
+            <div class="stat-card" style="border-color: #fff;">
+                <span class="stat-label" style="color: #fff;">STATUS</span>
+                <span class="stat-value">ACTIVE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-bar">
+        <p>&copy; 2026 AOZORA UNIVERSE - DZAKYGO OFFICIAL PARTNER</p>
+    </footer>
+
+    <script>
+        function toggleSubmenu() {
+            var submenu = document.getElementById("eh-submenu");
+            submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
