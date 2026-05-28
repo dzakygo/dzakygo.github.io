@@ -2,15 +2,16 @@
    1. MOTOGP FONTS IDENTITY
    ========================================================================== */
 @font-face {
-    font-family: 'MotoGP-Display';
-    src: url('https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/MGPDisplay-BoldExpanded.otf') format('opentype');
-    font-weight: bold;    
-}
-@font-face {
-    font-family: 'MotoGP-Text';
-    src: url('https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/MGPText-Regular.ttf') format('truetype');
-    font-weight: normal;
-}
+        font-family: 'MotoGP-Display';
+        src: url('https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-BoldExpanded.otf') format('opentype');
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: 'MotoGP-Text';
+        src: url('https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-Regular.ttf') format('truetype');
+        font-weight: normal;
+    }
 
 /* ==========================================================================
    2. GLOBAL RESET & BASE
