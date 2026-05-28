@@ -543,3 +543,134 @@ html, body {
     .submenu { position: relative !important; top: 0 !important; }
     .submenu-link { display: block !important; margin: 10px 0 !important; }
 }
+
+/* ==========================================================================
+   1. COMPLETE MGP FONT FAMILY CONFIGURATION
+   ========================================================================== */
+
+/* --- DISPLAY SERIES (20 VARIANTS) --- */
+@font-face { font-family: "MGP-D-Thin"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-Thin.otf"); }
+@font-face { font-family: "MGP-D-Thin-Nar"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-ThinNarrow.otf"); }
+@font-face { font-family: "MGP-D-Thin-Wid"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-ThinWide.otf"); }
+@font-face { font-family: "MGP-D-Thin-Exp"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-ThinExpanded.otf"); }
+@font-face { font-family: "MGP-D-Light"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-Light.otf"); }
+@font-face { font-family: "MGP-D-Light-Nar"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-LightNarrow.otf"); }
+@font-face { font-family: "MGP-D-Light-Wid"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-LightWide.otf"); }
+@font-face { font-family: "MGP-D-Light-Exp"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-LightExpanded.otf"); }
+@font-face { font-family: "MGP-D-Reg"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-Regular.otf"); }
+@font-face { font-family: "MGP-D-Reg-Nar"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-RegularNarrow.otf"); }
+@font-face { font-family: "MGP-D-Reg-Wid"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-RegularWide.otf"); }
+@font-face { font-family: "MGP-D-Reg-Exp"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-RegularExpanded.otf"); }
+@font-face { font-family: "MGP-D-Med"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-Medium.otf"); }
+@font-face { font-family: "MGP-D-Med-Nar"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-MediumNarrow.otf"); }
+@font-face { font-family: "MGP-D-Med-Wid"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-MediumWide.otf"); }
+@font-face { font-family: "MGP-D-Med-Exp"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-MediumExpanded.otf"); }
+@font-face { font-family: "MGP-D-Bold"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-Bold.otf"); }
+@font-face { font-family: "MGP-D-Bold-Nar"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-BoldNarrow.otf"); }
+@font-face { font-family: "MGP-D-Bold-Wid"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-BoldWide.otf"); }
+@font-face { font-family: "MGP-D-Bold-Exp"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPDisplay-BoldExpanded.otf"); }
+
+/* --- INLINE SERIES (12 VARIANTS) --- */
+@font-face { font-family: "MGP-I-Reg"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-Regular.otf"); }
+@font-face { font-family: "MGP-I-Reg-Nar"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-RegularNarrow.otf"); }
+@font-face { font-family: "MGP-I-Reg-Wid"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-RegularWide.otf"); }
+@font-face { font-family: "MGP-I-Reg-Exp"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-RegularExpanded.otf"); }
+@font-face { font-family: "MGP-I-Med"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-Medium.otf"); }
+@font-face { font-family: "MGP-I-Med-Nar"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-MediumNarrow.otf"); }
+@font-face { font-family: "MGP-I-Med-Wid"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-MediumWide.otf"); }
+@font-face { font-family: "MGP-I-Med-Exp"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-MediumExpanded.otf"); }
+@font-face { font-family: "MGP-I-Bold"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-Bold.otf"); }
+@font-face { font-family: "MGP-I-Bold-Nar"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-BoldNarrow.otf"); }
+@font-face { font-family: "MGP-I-Bold-Wid"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-BoldWide.otf"); }
+@font-face { font-family: "MGP-I-Bold-Exp"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPInline-BoldExpanded.otf"); }
+
+/* --- TEXT SERIES (12 VARIANTS) --- */
+@font-face { font-family: "MGP-T-Light"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-Light.ttf"); }
+@font-face { font-family: "MGP-T-Light-It"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-LightItalic.ttf"); }
+@font-face { font-family: "MGP-T-Reg"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-Regular.ttf"); }
+@font-face { font-family: "MGP-T-Reg-It"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-RegularItalic.ttf"); }
+@font-face { font-family: "MGP-T-Med"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-Medium.ttf"); }
+@font-face { font-family: "MGP-T-Med-It"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-MediumItalic.ttf"); }
+@font-face { font-family: "MGP-T-Bold"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-Bold.ttf"); }
+@font-face { font-family: "MGP-T-Bold-It"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-BoldItalic.ttf"); }
+@font-face { font-family: "MGP-T-Black"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-Black.ttf"); }
+@font-face { font-family: "MGP-T-Black-It"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-BlackItalic.ttf"); }
+@font-face { font-family: "MGP-T-Cond-Reg"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-CondensedRegular.ttf"); }
+@font-face { font-family: "MGP-T-Cond-Bold"; src: url("https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/font/main/MGPText-CondensedBold.ttf"); }
+
+/* --- SYSTEM GLOBAL CONFIG & OPEN THEME --- */
+:root {
+    --pink: #ff37a1; 
+    --blue: #0084ff;
+    --active-font: "MGP-D-Bold-Exp";
+    --font-size: 85px; 
+    --line-height: 0.95; 
+    --letter-spacing: 0em;
+    
+    /* OpenType Font Features Toggle Switches */
+    --dlig: "dlig" off; --liga: "liga" on; --zero: "zero" off;
+    --ss01: "ss01" off; --ss02: "ss02" off; --ss04: "ss04" off; --ss05: "ss05" off; --ss07: "ss07" off; --ss08: "ss08" off;
+    --ss10: "ss10" off; --ss11: "ss11" off; --ss14: "ss14" off; --ss15: "ss15" off; --ss16: "ss16" off; --ss17: "ss17" off;
+    --cv01: "cv01" off; --cv02: "cv02" off; --cv03: "cv03" off; --cv04: "cv04" off; --cv05: "cv05" off; --cv06: "cv06" off; --cv08: "cv08" off;
+}
+
+/* --- NUCLEAR GLOBAL RESET & FONTS ENGINE --- */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    background-color: #050505 !important;
+    color: #fff;
+    overflow-x: hidden;
+    font-family: 'MGP-T-Reg', sans-serif;
+    
+    /* Engine inject untuk mengaktifkan seluruh switch di atas secara langsung */
+    font-feature-settings: var(--dlig), var(--liga), var(--zero), 
+                           var(--ss01), var(--ss02), var(--ss04), var(--ss05), var(--ss07), var(--ss08), 
+                           var(--ss10), var(--ss11), var(--ss14), var(--ss15), var(--ss16), var(--ss17), 
+                           var(--cv01), var(--cv02), var(--cv03), var(--cv04), var(--cv05), var(--cv06), var(--cv08);
+}
+
+/* --- UPDATE CLASS LAYOUT DENGAN VARIANT FONT BARU --- */
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999 !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #111;
+    padding: 15px;
+    border-bottom: 3px solid var(--blue);
+    font-family: 'MGP-D-Med-Nar', sans-serif !important; /* Font navigasi lebih rapat */
+}
+
+.hero-logo {
+    font-family: var(--active-font), sans-serif !important; /* Dikontrol langsung dari :root */
+    line-height: var(--line-height) !important;
+    letter-spacing: var(--letter-spacing);
+    margin: 0 !important;
+    color: #fff;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+.waifu-title {
+    font-family: 'MGP-D-Bold-Exp', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.waifu-name {
+    font-family: 'MGP-D-Reg-Exp', sans-serif !important;
+    font-size: 1.1rem !important;
+    color: #ffffff !important;
+}
+
+.real-name { 
+    font-family: 'MGP-I-Bold-Exp', sans-serif !important; /* Nama profil pakai tipe Inline biar gahar */
+    font-size: 3.5rem; 
+    margin: 0; 
+    text-transform: uppercase; 
+}
