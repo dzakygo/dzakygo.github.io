@@ -1,4 +1,4 @@
-/* Reset & Variabel Warna */
+/* Reset & Variabel Warna - Aozora Theme */
 * {
     margin: 0;
     padding: 0;
@@ -8,12 +8,13 @@
 }
 
 :root {
-    --bg-color: #0b0f19;
-    --card-bg: #151b2c;
-    --text-color: #f3f4f6;
-    --text-muted: #9ca3af;
-    --primary-color: #38bdf8; /* Biru Cyan Neon */
-    --accent-color: #818cf8;
+    --bg-color: #f0f7ff;        /* Biru langit super soft (Sky tint) */
+    --card-bg: #ffffff;         /* Putih bersih seperti awan */
+    --text-color: #0f172a;      /* Deep slate / hampir hitam untuk teks utama */
+    --text-muted: #64748b;      /* Abu-abu kebiruan untuk deskripsi */
+    --primary-color: #38bdf8;   /* Aozora Sky Blue cerah */
+    --accent-color: #0284c7;    /* Deep Sky Blue untuk penegasan/button */
+    --header-bg: rgba(240, 247, 255, 0.8);
 }
 
 body {
@@ -27,21 +28,25 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
-    position: absolute;
+    padding: 1.5rem 5%;
+    position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(8px); /* Efek kaca transparan di atas langit */
+    box-shadow: 0 1px 10px rgba(56, 189, 248, 0.1);
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
 }
 
 .logo span {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 nav a {
@@ -53,7 +58,7 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Hero Section */
@@ -62,12 +67,28 @@ nav a:hover, nav a.active {
     display: flex;
     align-items: center;
     padding: 0 5%;
-    background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+    /* Efek gradasi dari langit cerah ke putih awan */
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f7ff 100%);
+    position: relative;
+}
+
+/* Hiasan background abstrak menyerupai gumpalan langit/cahaya */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+    z-index: 1;
 }
 
 .hero-content {
     max-width: 600px;
-    margin-top: 50px;
+    margin-top: 80px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -75,6 +96,7 @@ nav a:hover, nav a.active {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    color: #0369a1; /* Biru laut dalam */
 }
 
 .hero-content h1 span {
@@ -104,29 +126,32 @@ nav a:hover, nav a.active {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: #000;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #7dd3fc;
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    background-color: #0369a1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
 }
 
 .btn-secondary {
-    border: 1px solid var(--text-muted);
-    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    color: var(--accent-color);
+    background-color: transparent;
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: var(--text-color);
+    background-color: rgba(56, 189, 248, 0.1);
+    transform: translateY(-2px);
 }
 
 /* Projects Section */
 .projects-section {
-    padding: 5rem 5%;
-    background-color: rgba(21, 27, 44, 0.3);
+    padding: 7rem 5% 5rem 5%;
+    background-color: #ffffff; /* Section bawah transisi ke putih bersih */
 }
 
 .projects-section h2 {
@@ -134,10 +159,11 @@ nav a:hover, nav a.active {
     font-weight: 800;
     margin-bottom: 3rem;
     text-align: center;
+    color: #0f172a;
 }
 
 .projects-section h2 span {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 .project-grid {
@@ -149,24 +175,34 @@ nav a:hover, nav a.active {
 .project-card {
     background-color: var(--card-bg);
     padding: 2.5rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: 0.3s translateY, 0.3s border-color;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: 0.3s all ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(56, 189, 248, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.3);
 }
 
 .card-icon {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1.5rem;
+    background: #f0f9ff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
 }
 
 .project-card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
+    color: #1e293b;
 }
 
 .project-card p {
@@ -177,10 +213,16 @@ nav a:hover, nav a.active {
 }
 
 .card-link {
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.card-link:hover {
+    color: #0369a1;
+    letter-spacing: 0.5px;
 }
 
 /* Footer */
@@ -189,20 +231,21 @@ footer {
     padding: 3rem 5%;
     color: var(--text-muted);
     font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
 }
 
 /* Responsive untuk HP */
 @media (max-width: 768px) {
     header {
-        padding: 1.5rem 5%;
+        padding: 1rem 5%;
     }
     nav a {
         margin-left: 1rem;
         font-size: 0.9rem;
     }
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
     .hero-buttons {
         flex-direction: column;
