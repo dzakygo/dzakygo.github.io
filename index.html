@@ -3,124 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DzakyGO Official Hub</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DzakyGO Official Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           1. FONTS CONFIGURATION (MGP SERIES)
+           ========================================================================== */
+        @font-face {
+            font-family: 'MotoGP-Display';
+            src: url('https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/MGPDisplay-BoldExpanded.otf') format('opentype');
+            font-weight: bold;    
+        }
+        @font-face {
+            font-family: 'MotoGP-Text';
+            src: url('https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/MGPText-Regular.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+        /* ==========================================================================
+           2. PURE HTML RESET
+           ========================================================================== */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'MotoGP-Text', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ==========================================================================
+           3. STICKY NAVIGATION & SUBMENU
+           ========================================================================== */
+        .main-nav {
+            position: relative;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #111;
+            padding: 15px;
+            border-bottom: 3px solid #379bff;
+        }
+
+        .main-nav .nav-link {
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: 'MotoGP-Display', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .main-nav .nav-link:hover, 
+        .submenu-link:hover {
+            color: #379bff !important;
+        }
+
+        .eh-logo.nav-link {
+            background: linear-gradient(90deg, #0000ff, #cc00cc); 
+            color: #fff !important;
+            padding: 8px 15px;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .eh-logo.nav-link:hover {
+            opacity: 0.9;
+        }
+
+        .submenu {
+            display: none;
+            background: #1a1a1a;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            border-bottom: 3px solid #ff37a1;
+            z-index: 9998;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .submenu p { 
+            display: inline-block; 
+            margin: 0 15px; 
+        }
+
+        .submenu-link { 
+            color: #ffffff !important; 
+            text-decoration: none; 
+            font-family: 'MotoGP-Text', sans-serif;
+            font-size: 0.8rem; 
+            transition: 0.3s;
+        }
+
+        /* ==========================================================================
+           4. SEARCH & CONTENT CONTAINER
+           ========================================================================== */
+        .search-container {
+            text-align: center; 
+            padding: 40px 20px; 
+            background: #0a0a0a; 
+            border-bottom: 1px solid #222;
+        }
+
+        .search-title {
+            font-family: 'MotoGP-Display', sans-serif; 
+            color: #fff; 
+            margin-bottom: 20px; 
+            letter-spacing: 2px;
+        }
+
+        .search-skew-box {
+            position: relative; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            transform: skewX(-10deg);
+        }
+
+        #news-search {
+            width: 100%; 
+            padding: 15px 50px 15px 20px; 
+            background: #1a1a1a; 
+            border: 2px solid #333; 
+            color: #fff; 
+            font-family: 'MotoGP-Text', sans-serif; 
+            outline: none; 
+            transition: 0.3s; 
+            border-radius: 0; 
+            box-sizing: border-box;
+        }
+
+        #news-search:focus {
+            border-color: #ff37a1 !important;
+            box-shadow: 0 0 15px rgba(255, 55, 161, 0.3);
+            background: #222;
+        }
+
+        .search-icon {
+            position: absolute; 
+            right: 20px; 
+            top: 18px; 
+            color: #379bff; 
+            transform: skewX(10deg);
+        }
+
+        /* Static Mod Grid untuk GitHub */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card-item {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card-item:hover { 
+            transform: translateY(-5px); 
+            border-color: #379bff; 
+        }
+
+        .card-item img {
+            display: block;
+            width: 100%;        
+            height: 200px;       
+            object-fit: cover;   
+            border-bottom: 2px solid #379bff;
+            background-color: #222; 
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card-title { 
+            font-family: 'MotoGP-Display', sans-serif !important;
+            color: #fff; 
+            font-size: 1.2rem; 
+            margin: 0 0 15px 0; 
+            text-decoration: none; 
+            display: block; 
+            text-transform: uppercase;
+        }
+
+        .card-btn {
+            color: #379bff; 
+            font-weight: bold; 
+            text-decoration: none; 
+            font-size: 0.8rem; 
+            font-family: 'MotoGP-Display', sans-serif;
+        }
+
+        /* ==========================================================================
+           5. FOOTER SECTION
+           ========================================================================== */
+        .footer-bar {
+            padding: 40px;
+            text-align: center;
+            color: #bbb;
+            font-size: 0.8rem;
+            border-top: 1px solid #333;
+            background-color: #111;
+        }
+
+        .social-links a {
+            color: #555 !important; 
+            margin: 0 15px; 
+            font-size: 1.5rem;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover { opacity: 1; }
+        .social-links a:hover .fa-discord { color: #5865F2 !important; }
+        .social-links a:hover .fa-youtube { color: #FF0000 !important; }
+        .social-links a:hover .fa-tiktok { color: #00F2EA !important; }
+        .social-links a:hover .fa-instagram { color: #E1306C !important; }
+        .social-links a:hover .fa-envelope { color: #379bff !important; }
+
+        /* ==========================================================================
+           6. RESPONSIVE FOR RESPONSIVE ENGINE
+           ========================================================================== */
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                flex-direction: column; 
+                gap: 15px;
+                padding: 15px 10px;
+            }
+
+            .eh-logo.nav-link {
+                order: -1; 
+                width: 90%;
+                text-align: center;
+            }
+
+            .submenu {
+                position: relative !important; 
+                top: 0 !important;
+                border-bottom: 2px solid #ff37a1;
+            }
+
+            .submenu p {
+                display: block !important;
+                margin: 12px 0 !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAVIGASI KUSTOM -->
+    <!-- NAVIGASI UTAMA -->
     <nav class="main-nav">
-        <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="https://yt3.ggpht.com/U3JA2tnyay3U-wrA3DR27lKKBC5CkTechENg6CknuEoIOvZT9atx-5Bk9BSZ0ES4HWsyJK6ucw=s500" alt="DzakyGO" style="height: 45px; width: auto;">
+        <a href="/" style="display: flex; align-items: center;">
+            <img src="https://yt3.ggpht.com/U3JA2tnyay3U-wrA3DR27lKKBC5CkTechENg6CknuEoIOvZT9atx-5Bk9BSZ0ES4HWsyJK6ucw=s500" 
+                 alt="DzakyGO Profile" 
+                 style="height: 45px; width: auto; max-height: 45px; display: block; margin: 0;">
         </a>
-        <a href="index.html" class="nav-link">HOME</a>
-        <div class="eh-logo nav-link" onclick="toggleSubmenu()" style="cursor: pointer;">DZAKYGO</div>
-        <a href="#" class="nav-link">MODS</a>
-        <a href="about.html" class="nav-link">ABOUT ME</a>
+
+        <a href="/" class="nav-link">HOME</a>
+
+        <div class="eh-logo nav-link" onclick="toggleSubmenu()">
+            DZAKYGO
+        </div>
+
+        <a href="/p/news.html" class="nav-link">MODS</a>
+        <a href="/p/about-me.html" class="nav-link">ABOUT ME</a>
         
+        <!-- Dropdown Submenu -->
         <div id="eh-submenu" class="submenu">
-            <a href="#" class="submenu-link">NEWS</a>
-            <a href="https://aozorauniverse.blogspot.com" target="_blank" class="submenu-link">AOZORA WEBSITE</a>
-            <a href="https://dsc.gg/aozorians" target="_blank" class="submenu-link">AOZORA DISCORD</a>
-            <a href="https://youtube.com/@DzakyGO.2" target="_blank" class="submenu-link">DZAKYGO YOUTUBE</a>
+            <p><a href="/p/news.html" class="submenu-link">NEWS</a></p>
+            <p><a href="https://aozorauniverse.blogspot.com" class="submenu-link">AOZORA UNIVERSE WEBSITE</a></p>
+            <p><a href="https://dsc.gg/aozorians" class="submenu-link">AOZORA UNIVERSE DISCORD</a></p>
+            <p><a href="https://youtube.com/@DzakyGO.2" class="submenu-link">DzakyGO Youtube</a></p>
         </div>
     </nav>
 
-    <!-- HERO HEADER -->
-    <main class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://img.youtube.com/vi/nku0KejQUt8/maxresdefault.jpg'); background-size: cover; background-position: center;">
-        <div class="hero-content-wrapper">
-            <div style="background: #ff0000; color: #fff; padding: 5px 15px; font-size: 0.8rem; transform: skewX(-15deg); font-weight: bold;">
-                DZAKYGO OFFICIAL SITE
-            </div>
-            <h1 class="hero-logo">DZAKYGO <span style="color: #ff37a1;">CHANNEL</span></h1>
-            <p class="hero-subtitle">MODDING • GAMING • ANYTHINGS</p>
-            <div class="hero-action">
-                <button class="btn-start" onclick="window.open('https://youtube.com/@DzakyGO.2', '_blank')">SUBSCRIBE CHANNEL</button>
+    <!-- BOX PENCARIAN -->
+    <div class="search-container">
+        <h2 class="search-title">SEARCH CONTENT</h2>
+        <div class="search-skew-box">
+            <input type="text" id="news-search" placeholder="Cari Mod, Race, atau Tutorial..." onkeyup="liveSearch()">
+            <i class="fas fa-search" class="search-icon"></i>
+        </div>
+    </div>
+
+    <!-- MAIN STATIC GRID (Bisa kamu isi manual sesuai update rilisan mod GitHub-mu) -->
+    <div class="content-grid" id="content-grid">
+        
+        <!-- CARD 1: MotoGP Mod V2 -->
+        <div class="card-item">
+            <img src="https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/race-week-jerez.jpg" alt="Mod Update">
+            <div class="card-info">
+                <a href="#" class="card-title">MOTOGP 06 PSP MOD OVERLAY V2</a>
+                <p style="color:#888; font-size:0.85rem; margin-bottom:15px;">Update livery tim, 2026 rider lineup lengkap, dan struktur TV Graphic baru.</p>
+                <a href="#" class="card-btn">DOWNLOAD MOD →</a>
             </div>
         </div>
-    </main>
 
-    <!-- YOUTUBE EMBED SECTION -->
-    <section id="dzakygo-video" style="background: #080808; padding: 60px 20px; border-top: 2px solid #333;">
-        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-            <h2 style="font-family: 'MotoGP-Display', sans-serif; color: #fff; letter-spacing: 2px; margin-bottom: 40px;">
-                <i class="fab fa-youtube" style="color: #ff0000; margin-right: 10px;"></i>LATEST FROM DZAKYGO
-            </h2>
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 4px solid #222; border-radius: 8px;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/4BysmQESd4Q?si=ttJIb8DhOXR9AwFA" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p style="color: #666; margin-top: 20px;">Update seputar mod MotoGP PSP, tutorial random, dan komunitas Aozora Universe.</p>
-        </div>
-    </section>
-
-    <!-- WAIFU SECTION -->
-    <section class="waifu-section">
-        <h2 class="waifu-title">My Waifu🥰</h2>
-        <div class="waifu-grid">
-            <!-- Sena -->
-            <div class="waifu-card legend">
-                <div class="legend-mark">TERSAYANG</div>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeuMLtG04JNi-6mOqzO38ypBR6F7088LvVVQ&s" class="waifu-img" alt="Sena">
-                <div class="waifu-info">
-                    <p class="waifu-tag">GRADUATED</p>
-                    <h3 class="waifu-name">Nekoyama Sena</h3>
-                </div>
-            </div>
-            <!-- Aori -->
-            <div class="waifu-card aori-special">
-                <div class="legend-mark" style="background: #379bff; color: #fff;">RIVAL</div>
-                <img src="https://pbs.twimg.com/media/HDlwR6ebEAA-J7F?format=jpg&name=large" class="waifu-img" alt="Aori">
-                <div class="waifu-info">
-                    <p class="waifu-tag">Aozora Maskot</p>
-                    <h3 class="waifu-name">Aori-chan</h3>
-                </div>
-            </div>
-            <!-- Kubo -->
-            <div class="waifu-card">
-                <div class="legend-mark" style="background: #A581C1; color: #fff;">#1</div>
-                <img src="https://otakotaku.com/asset/img/character/2022/05/nagisa-kubo-627e87c5ec93fp.jpg" class="waifu-img" alt="Kubo">
-                <div class="waifu-info">
-                    <p class="waifu-tag">Anime / Kubo-san</p>
-                    <h3 class="waifu-name">Kubo Nagisa</h3>
-                </div>
-            </div>
-            <!-- Kobo -->
-            <div class="waifu-card" style="border-color: #379bff;">
-                <div class="legend-mark" style="background: #00fbff; color: #000;">#3</div>
-                <img src="https://static.wikitide.net/hololivewiki/9/9b/Kobo_Kanaeru_-_Portrait_01.png" class="waifu-img" alt="Kobo">
-                <div class="waifu-info">
-                    <p class="waifu-tag">Vtuber / Kobo</p>
-                    <h3 class="waifu-name">Kobo Kanaeru</h3>
-                </div>
-            </div>
-            <!-- Zeta -->
-            <div class="waifu-card">
-                <div class="legend-mark" style="background: #fff; color: #000;">#4</div>
-                <img src="https://static.wikitide.net/hololivewiki/thumb/5/5c/Vestia_Zeta_-_Portrait_03.png/290px-Vestia_Zeta_-_Portrait_03.png" class="waifu-img" alt="Zeta">
-                <div class="waifu-info">
-                    <p class="waifu-tag">Vtuber / Agent</p>
-                    <h3 class="waifu-name">Vestia Zeta</h3>
-                </div>
+        <!-- CARD 2: Savedata / CWCheats -->
+        <div class="card-item">
+            <img src="https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/race-week-jerez.jpg" alt="Cheat Code">
+            <div class="card-info">
+                <a href="#" class="card-title">CWCHEAT MEMORY CODES COMPILATION</a>
+                <p style="color:#888; font-size:0.85rem; margin-bottom:15px;">Daftar kode cheat tekstur, pengubah ID kamera, dan kustom HUD tekstur game.</p>
+                <a href="#" class="card-btn">GET CODES →</a>
             </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
+    </div>
+
+    <!-- FOOTER SOSIAL MEDIA -->
     <footer class="footer-bar">
         <div class="social-links">
-            <a href="https://dsc.gg/aozorians" target="_blank"><i class="fab fa-discord"></i></a>
-            <a href="https://youtube.com/@DzakyGO.2" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://tiktok.com/@jakizulfah" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://dsc.gg/aozorians"><i class="fab fa-discord"></i></a>
+            <a href="https://youtube.com/@DzakyGO.2"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com/@jakizulfah"><i class="fab fa-tiktok"></i></a>
+            <a href="https://instagram.com/dzaxuwu"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:icedzaky874@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>&copy; 2026 AOZORA UNIVERSE - DZAKYGO OFFICIAL PARTNER</p>
+        <p style="margin: 20px 0 0 0;">&copy; 2026 AOZORA UNIVERSE - DZAKYGO OFFICIAL PARTNER</p>
     </footer>
 
+    <!-- ==========================================================================
+       7. LIGHTWEIGHT LIVE SEARCH SCRIPT (STATIC)
+       ========================================================================== -->
     <script>
-        function toggleSubmenu() {
-            var submenu = document.getElementById("eh-submenu");
-            submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+    function toggleSubmenu() {
+        var submenu = document.getElementById("eh-submenu");
+        submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+    }
+
+    // Fungsi pencarian instan untuk elemen kartu statis di GitHub Pages
+    function liveSearch() {
+        var input = document.getElementById('news-search').value.toLowerCase();
+        var cards = document.getElementsByClassName('card-item');
+        
+        for (var i = 0; i < cards.length; i++) {
+            var title = cards[i].querySelector('.card-title').innerText.toLowerCase();
+            var desc = cards[i].querySelector('p').innerText.toLowerCase();
+            
+            if (title.includes(input) || desc.includes(input)) {
+                cards[i].style.display = "block";
+            } else {
+                cards[i].style.display = "none";
+            }
         }
+    }
     </script>
 </body>
 </html>
