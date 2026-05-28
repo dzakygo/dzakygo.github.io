@@ -4,317 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DzakyGO Official</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        /* ==========================================================================
-           1. MOTOGP FONTS IDENTITY
-           ========================================================================== */
-        @font-face {
-            font-family: 'MotoGP-Display';
-            src: url('https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/MGPDisplay-BoldExpanded.otf') format('opentype');
-            font-weight: bold;    
-        }
-        @font-face {
-            font-family: 'MotoGP-Text';
-            src: url('https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/MGPText-Regular.ttf') format('truetype');
-            font-weight: normal;
-        }
-
-        /* ==========================================================================
-           2. GLOBAL RESET
-           ========================================================================== */
-        html {
-            scroll-behavior: smooth; /* Efek scroll mulus saat menu diklik */
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            background-color: #0b111e; /* Sesuai warna background abu-biru muda di gambar */
-            color: #000000;
-            font-family: 'MotoGP-Text', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* ==========================================================================
-           3. STICKY NAVIGATION BAR & SUBMENU
-           ========================================================================== */
-        .main-nav {
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: #111;
-            padding: 12px;
-            border-bottom: 4px solid #ff0000; /* Garis merah atas sesuai gambar */
-        }
-
-        .main-nav .nav-link {
-            color: #ffffff !important;
-            text-decoration: none;
-            font-family: 'MotoGP-Display', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .main-nav .nav-link:hover, .submenu-link:hover {
-            color: #ff37a1 !important;
-        }
-
-        .eh-logo.nav-link {
-            background: #ff0000; 
-            color: #fff !important;
-            padding: 6px 12px;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-
-        .submenu {
-            display: none;
-            background: #1a1a1a;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            padding: 12px 0;
-            border-bottom: 3px solid #ff37a1;
-            z-index: 9998;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        .submenu p { display: inline-block; margin: 0 15px; }
-        .submenu-link { color: #ffffff !important; text-decoration: none; font-size: 0.8rem; }
-
-        /* ==========================================================================
-           4. YOUTUBE HERO BANNER SECTION
-           ========================================================================== */
-        .hero-youtube {
-            background: #000;
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 5px solid #ff0000;
-        }
-        .hero-title {
-            font-family: 'MotoGP-Display', sans-serif;
-            color: #fff;
-            font-size: 1.8rem;
-            margin: 0 0 20px 0;
-            letter-spacing: 1px;
-        }
-        .hero-title span { color: #ff0000; }
-        .video-wrapper {
-            max-width: 750px;
-            margin: 0 auto;
-            aspect-ratio: 16/9;
-            background: #111;
-            border: 2px solid #222;
-        }
-        .video-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* ==========================================================================
-           5. WAIFU & ABOUT CONTENT SECTION (LAYOUT MATCH)
-           ========================================================================== */
-        .section-title {
-            font-family: 'MotoGP-Display', sans-serif;
-            font-size: 1.5rem;
-            padding: 10px 20px;
-            margin: 20px 0 10px 0;
-            border-bottom: 2px solid #000;
-            display: inline-block;
-        }
-        
-        .character-container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .main-waifu-box {
-            margin-bottom: 50px;
-        }
-
-        .char-img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 15px auto;
-        }
-
-        .char-name {
-            font-family: 'MotoGP-Display', sans-serif;
-            font-size: 1.6rem;
-            margin: 5px 0;
-            text-transform: uppercase;
-        }
-
-        .char-sub {
-            font-size: 0.9rem;
-            color: #444;
-            margin: 0 0 15px 0;
-            font-weight: bold;
-        }
-
-        /* Grid untuk Waifu List di bagian bawah */
-        .waifu-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-            margin-top: 30px;
-        }
-        .grid-item {
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .grid-item img {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        /* ==========================================================================
-           6. FOOTER SECTION
-           ========================================================================== */
-        .footer-bar {
-            padding: 30px;
-            text-align: center;
-            color: #bbb;
-            font-size: 0.8rem;
-            border-top: 1px solid #333;
-            background-color: #111;
-            margin-top: 50px;
-        }
-        .social-links a {
-            color: #555 !important; 
-            margin: 0 12px; 
-            font-size: 1.4rem;
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .social-links a:hover { opacity: 1; }
-        .social-links a:hover .fa-discord { color: #5865F2 !important; }
-        .social-links a:hover .fa-youtube { color: #FF0000 !important; }
-        .social-links a:hover .fa-tiktok { color: #00F2EA !important; }
-        .social-links a:hover .fa-instagram { color: #E1306C !important; }
-        .social-links a:hover .fa-envelope { color: #379bff !important; }
-
-        @media screen and (max-width: 768px) {
-            .main-nav { flex-direction: column; gap: 12px; }
-            .eh-logo.nav-link { order: -1; width: 90%; text-align: center; }
-            .submenu { position: relative !important; top: 0 !important; }
-            .submenu p { display: block !important; margin: 10px 0 !important; }
-        }
-    </style>
 </head>
 <body>
 
-    <!-- NAVIGASI UTAMA (MENGGUNAKAN ANCHOR LINK '#') -->
+    <!-- NAVIGASI KUSTOM -->
     <nav class="main-nav">
-        <a href="#home" style="display: flex; align-items: center;">
-            <img src="https://yt3.ggpht.com/U3JA2tnyay3U-wrA3DR27lKKBC5CkTechENg6CknuEoIOvZT9atx-5Bk9BSZ0ES4HWsyJK6ucw=s500" 
-                 alt="DzakyGO Profile" style="height: 40px; width: auto; display: block; margin: 0;">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="https://yt3.ggpht.com/U3JA2tnyay3U-wrA3DR27lKKBC5CkTechENg6CknuEoIOvZT9atx-5Bk9BSZ0ES4HWsyJK6ucw=s500" alt="DzakyGO" style="height: 45px; width: auto;">
         </a>
-
-        <a href="#home" class="nav-link">HOME</a>
-
-        <div class="eh-logo nav-link" onclick="toggleSubmenu()">
-            DZAKYGO CHANNEL
-        </div>
-
-        <a href="#waifu-section" class="nav-link">ABOUT ME (WAIFU)</a>
+        <a href="index.html" class="nav-link">HOME</a>
+        <div class="eh-logo nav-link" onclick="toggleSubmenu()">DZAKYGO</div>
+        <a href="https://dzakygodzax.blogspot.com/p/news.html" class="nav-link">MODS</a>
+        <a href="about.html" class="nav-link">ABOUT ME</a>
         
-        <!-- Dropdown Submenu -->
         <div id="eh-submenu" class="submenu">
-            <p><a href="https://aozorauniverse.blogspot.com" class="submenu-link">AOZORA UNIVERSE WEBSITE</a></p>
-            <p><a href="https://dsc.gg/aozorians" class="submenu-link">AOZORA UNIVERSE DISCORD</a></p>
-            <p><a href="https://youtube.com/@DzakyGO.2" class="submenu-link">DzakyGO Youtube</a></p>
+            <a href="https://dzakygodzax.blogspot.com/p/news.html" class="submenu-link">NEWS</a>
+            <a href="https://aozorauniverse.blogspot.com" target="_blank" class="submenu-link">AOZORA WEBSITE</a>
+            <a href="https://dsc.gg/aozorians" target="_blank" class="submenu-link">AOZORA DISCORD</a>
+            <a href="https://youtube.com/@DzakyGO.2" target="_blank" class="submenu-link">DZAKYGO YOUTUBE</a>
         </div>
     </nav>
 
-    <!-- SECTION 1: HOME (YOUTUBE HERO BANNER) -->
-    <section id="home" class="hero-youtube">
+    <!-- BANNER VIDEO YOUTUBE -->
+    <section class="hero-youtube">
         <h2 class="hero-title"><i class="fab fa-youtube"></i> LATEST FROM <span>DZAKYGO</span></h2>
         <div class="video-wrapper">
-            <!-- Ganti ID 'VIDEO_ID_KAMU' dengan ID video youtube aslimu agar bisa diputar langsung -->
             <iframe src="https://www.youtube.com/embed/VIDEO_ID_KAMU" allowfullscreen></iframe>
         </div>
     </section>
 
-    <!-- SECTION 2: ABOUT ME / WAIFU LIST (STRUKTUR SAMA PERSIS SEPERTI GAMBAR) -->
-    <section id="waifu-section" class="character-container">
-        
-        <!-- BAGIAN 1: UTAMA (AORI AOZORA) -->
-        <div class="main-waifu-box">
+    <!-- CONTENT WAIFU LIST (Sesuai Layout dzakygo.github.io_.jpg) -->
+    <section class="character-container">
+        <div>
             <h3 class="section-title">My Waifu 🥰</h3>
-            <!-- Asset Gambar Maskot Aori -->
             <img src="https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/aori-chan.jpg" class="char-img" alt="Aori Aozora" style="max-width: 500px;">
             <div class="char-name">Aori Aozora</div>
             <div class="char-sub">-Aori-chan-</div>
         </div>
 
-        <hr style="border: 0; border-top: 2px solid #ccc; margin: 40px 0;">
+        <hr style="border:0; border-top:2px solid #000; margin:40px 0;">
 
-        <!-- BAGIAN 2: DAFTAR WAIFU BAWAH (KUBO, KOBO, ZETA) -->
         <h3 class="section-title">Waifu List</h3>
         <div class="waifu-grid">
-            
-            <!-- Kubo Nagisa -->
             <div class="grid-item">
                 <img src="https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/kubo-nagisa.jpg" alt="Kubo Nagisa">
                 <div class="char-name" style="font-size: 1.2rem;">Kubo Nagisa</div>
                 <div class="char-sub">Kubo-san</div>
             </div>
-
-            <!-- Kobo Kanaeru -->
             <div class="grid-item">
                 <img src="https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/kobo-kanaeru.jpg" alt="Kobo Kanaeru">
                 <div class="char-name" style="font-size: 1.2rem;">Kobo Kanaeru</div>
                 <div class="char-sub">Kobo</div>
             </div>
-
-            <!-- Vestia Zeta -->
             <div class="grid-item">
                 <img src="https://raw.githubusercontent.com/dzakyzulfahmidzxy-lang/aozora-assets/main/vestia-zeta.jpg" alt="Vestia Zeta">
                 <div class="char-name" style="font-size: 1.2rem;">Vestia Zeta</div>
                 <div class="char-sub">Zeta</div>
             </div>
-
         </div>
     </section>
 
-    <!-- FOOTER SOSIAL MEDIA -->
+    <!-- FOOTER -->
     <footer class="footer-bar">
-        <div class="social-links">
-            <a href="https://dsc.gg/aozorians"><i class="fab fa-discord"></i></a>
-            <a href="https://youtube.com/@DzakyGO.2"><i class="fab fa-youtube"></i></a>
-            <a href="https://tiktok.com/@jakizulfah"><i class="fab fa-tiktok"></i></a>
-            <a href="https://instagram.com/dzaxuwu"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:icedzaky874@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p style="margin: 20px 0 0 0;">&copy; 2026 AOZORA UNIVERSE - DZAKYGO OFFICIAL PARTNER</p>
+        <p>&copy; 2026 AOZORA UNIVERSE - DZAKYGO OFFICIAL PARTNER</p>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT -->
     <script>
-    function toggleSubmenu() {
-        var submenu = document.getElementById("eh-submenu");
-        submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
-    }
+        function toggleSubmenu() {
+            var submenu = document.getElementById("eh-submenu");
+            submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+        }
     </script>
 </body>
 </html>
